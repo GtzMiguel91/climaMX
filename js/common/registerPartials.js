@@ -1,18 +1,18 @@
 const registerPartials = async function () {
   try {
-    const navbarPartial = await fetch("../views/partials/navbar-partial.hbs");
+    const navbarPartial = await fetch("/views/partials/navbar-partial.hbs");
     const navbarPartialText = await navbarPartial.text();
 
-    const homeMainPartial = await fetch("../views/partials/home-main-partial.hbs");
+    const homeMainPartial = await fetch("/views/partials/home-main-partial.hbs");
     const homeMainPartialText = await homeMainPartial.text();
 
-    const estadosMainPartial = await fetch("../views/partials/estados-main-partial.hbs");
+    const estadosMainPartial = await fetch("/views/partials/estados-main-partial.hbs");
     const estadosMainPartialText = await estadosMainPartial.text();
 
-    const municipiosMainPartial = await fetch("../views/partials/municipios-main-partial.hbs");
+    const municipiosMainPartial = await fetch("/views/partials/municipios-main-partial.hbs");
     const municipiosMainPartialText = await municipiosMainPartial.text();
 
-    const footerPartial = await fetch("../views/partials/footer-partial.hbs");
+    const footerPartial = await fetch("/views/partials/footer-partial.hbs");
     const footerPartialText = await footerPartial.text();
 
     const currentLocation = window.location.pathname;
