@@ -1,0 +1,110 @@
+<script id="municipios-main-partial" type="text/x-handlebars-template">
+<div class="container mt-5 mb-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <!-- Image on the left -->
+                <div class="col-md-4">
+                    <img src='../../img/principales/{{state_idx}}.png' alt="Image" class="img-fluid">
+                </div>
+                <!-- Information on the right -->
+                <div class="col-md-8 mt-3">
+                    <h5 class="card-title mb-5"><i class="fas fa-info fa-lg" style="color: #c60606;"></i>  Información del estado</h5>
+                    <div class="ml-3">
+                        {{#with info_estado}}
+                            {{#if superficie}}<p class="card-text mb-4" id="infoText"><span class="font-weight-bold">Superficie:</span> {{superficie}}.</p>{{/if}}	
+                            {{#if poblacion}}<p class="card-text mb-4" id="infoText"><span class="font-weight-bold">Población:</span> {{poblacion}} habitantes.</p>{{/if}}	
+                        {{/with}}
+                        <p class="card-text mb-4" id="infoText"><span class="font-weight-bold">Capital:</span> {{capital}}.</p>
+                        <!-- Input select for choosing information -->
+                        <div class="form-group d-flex flex-column flex-md-row align-items-md-center mt-5">
+                            <label for="municipio-select" class="mb-2 mb-md-0 mr-md-4"><span class="font-weight-bold">Municipio:</span></label>
+                            <select class="form-control js-example-responsive" id="municipio-select" style="width: 65%">
+                                {{#each municipios}}
+                                <option value="{{this}}">{{this}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Main Card -->
+    <div class="card mt-5">
+        <div class="card-body">
+            <h5 class="card-title"><i class="fas fa-cloud-sun fa-lg" style="color: #c60606;"></i>Clima del municipio <span id="municipio-clima"> {{capital}}</span></h5>
+
+            {{#each data_selected}}
+            <!-- Sub-Cards -->
+            <div class="row">
+                <!-- Sub-Card 1 -->
+                <div class="col-12 mb-3">
+                    <div class="card" style="background-color: #f2f2f2;">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="d-flex justify-content-around">
+                                        <img src='../../img/clima/{{desciel}}.png' alt="Image" width="75%" height="75%" class="img-fluid mb-2 clima-img">
+                                    </div>
+                                    
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 class="card-subtitle mb-2 text-dark clima-title">{{dia}} - {{desciel}}</h4>
+                                    <hr>
+                                    <div class="container mt-3">
+                                        <div class="row row-cols-2 clima-info">
+                                            <div class="row mt-3">
+                                                <div class="col-md-6">
+                                                <i class="fas fa-temperature-high fa-lg " style="color: #37ae71;"></i>
+                                                    Temp. máxima</div>
+                                                <div class="col-md-6 text-center clima-temp-max clima-font-size-values">{{tmax}}</div>
+                                            </div>
+                                            <div class="row ml-2 mt-3">
+                                                <div class="col-md-6"><i class="fas fa-temperature-low fa-lg" style="color: #37ae71;"></i>
+                                                Temp. mínima</div>
+                                                <div class="col-md-6 text-center clima-temp-min clima-font-size-values">{{tmin}}</div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-6"><i class="fas fa-cloud fa-lg" style="color: #37ae71;"></i>
+                                                Nubes</div>
+                                                <div class="col-md-6 text-center clima-nubes clima-font-size-values">{{cc}}</div>
+                                            </div>
+                                            <div class="row ml-2 mt-3">
+                                                <div class="col-md-6"><i class="fas fa-wind fa-lg" style="color: #37ae71;"></i>
+                                                Viento</div>
+                                                <div class="col-md-6 text-center clima-viento clima-font-size-values">{{velvien}}</div>
+                                            </div>
+                                            <div class="row mt-3">
+                                                <div class="col-md-6"><i class="fas fa-map-marker-alt fa-lg" style="color: #37ae71;"></i>
+                                                Latitud</div>
+                                                <div class="col-md-6 col-12 text-center clima-lat clima-font-size-values">{{lat}}</div>
+                                            </div>
+                                            <div class="row ml-2 mt-3">
+                                                <div class="col-md-6"><i class="fas fa-map-marker fa-lg" style="color: #37ae71;"></i>
+                                                Longitud</div>
+                                                <div class="col-md-6 col-12 text-center clima-lon clima-font-size-values">{{lon}}</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </div>
+    
+
+</div>
+
+
+
+
+
+</script>

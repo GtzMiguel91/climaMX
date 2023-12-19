@@ -1,0 +1,27 @@
+/* Simple CSS to define the layout */
+.header, .main-content {
+    display: flex;
+    justify-content: space-between;
+}
+.header div {
+    flex: 1;
+    border: 1px solid black;
+    padding: 10px;
+    margin: 2px;
+    text-align: center; /* Center the header text */
+}
+.main-content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Creates 4 columns */
+    grid-template-rows: repeat(9, 1fr); /* Creates 9 rows */
+    gap: 5px; /* Spacing between grid items */
+    padding: 10px;
+    margin: 2px;
+    border: 1px solid black;
+}
+.grid-item {
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

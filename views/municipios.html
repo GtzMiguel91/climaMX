@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pagina web</title>
+  <link rel="stylesheet" href="../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/select2.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@ttskch/select2-bootstrap4-theme@x.x.x/dist/select2-bootstrap4.min.css">
+
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.9.0/css/all.min.css'>
+</head>
+
+<body>
+  <header id="header-container"></header>
+
+  <main id="main-container" class="mb-3"></main>
+
+  <div id="footer-container"></div>
+
+  <!-- Handlebars templates -->
+  <script id="header-template" type="text/x-handlebars-template">
+      {{> navbarPartial}}
+    </script>
+
+  <script id="main-template" type="text/x-handlebars-template">
+      {{> municipiosMainPartial}}
+  </script>
+
+  <script id="footer-template" type="text/x-handlebars-template">
+      {{> footerPartial}}
+  </script>
+
+  <script src="../js/utils/handlebars-v4.7.8.js"></script>
+  <script src="../js/utils/jquery-3.7.1.min.js"></script>
+  <script src="../js/utils/bootstrap.bundle.min.js"></script>
+  <script src="../js/utils/select2.min.js"></script>
+  <script src="../js/common/constants.js"></script>
+  <script src="../js/common/addCustomTemplate.js"></script>
+  <script src="../js/common/registerPartials.js"></script>
+  <script src="../js/common/addGeneralElements.js"></script>
+  <script src="../js/common/addMainElement.js"></script>
+  <script src="../js/municipios.js"></script>
+</body>
+
+</html>
